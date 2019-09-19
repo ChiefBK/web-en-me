@@ -4,7 +4,20 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 function Events() {
     return (
-        <h2>Events</h2>
+        <div>
+            <h2>Events</h2>
+            <div className="event__list-container">
+                <div className="event__list-item">
+                    BBQ at the beach
+                </div>
+                <div className="event__list-item">
+                    Birthday Party!
+                </div>
+                <div className="event__list-item">
+                    Housewarming
+                </div>
+            </div>
+        </div>
     );
 }
 
