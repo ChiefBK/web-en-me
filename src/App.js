@@ -51,7 +51,7 @@ function Plex({ match }) {
 
 function Home() {
     return (
-        <nav>
+        <nav className="navigation__container">
             <ul>
                 <li>
                     <Link to="/events">Events</Link>
@@ -67,10 +67,19 @@ function Home() {
     );
 }
 
+function Header() {
+    return (
+        <Link to="/">
+            <div className="header__container"></div>
+        </Link>
+    );
+}
+
 function App() {
   return (
       <Router>
           <div>
+              <Header/>
               <Switch>
                 <Route exact path="/" component={Home} />
                 <Route path="/events" component={Events} />

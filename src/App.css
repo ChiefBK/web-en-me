@@ -31,3 +31,23 @@
     transform: rotate(360deg);
   }
 }
+
+.header__container {
+  background-image: url("logo.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-origin: content-box;
+  height: 30px;
+  width: 100%;
+}
+
+.navigation__container ul {
+  display: flex;
+  justify-content: space-around;
+  padding-inline-start: 0;
+}
+
+.navigation__container li {
+  display: inline;
+  align-self: flex-start;
+}
