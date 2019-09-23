@@ -32,6 +32,13 @@
   }
 }
 
+.header-link {
+  letter-spacing: 2px;
+  color: grey;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .header__container {
   background-image: url("logo.svg");
   background-repeat: no-repeat;
@@ -43,11 +50,28 @@
 
 .navigation__container ul {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
+  align-items: center;
   padding-inline-start: 0;
+  flex-wrap: wrap;
 }
 
 .navigation__container li {
-  display: inline;
-  align-self: flex-start;
+  list-style-type: none;
+  flex-grow: 1;
+}
+
+.navigation__container li.home {
+
+}
+
+.navigation__container li:first-of-type {
+  flex-basis: 100%;
+}
+
+.navigation__container li .navigation__header-icon {
+  background-image: url("logo.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 30px;
 }

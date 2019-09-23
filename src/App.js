@@ -49,30 +49,31 @@ function Plex({ match }) {
 //     );
 // }
 
-function Home() {
+function Header() {
     return (
         <nav className="navigation__container">
             <ul>
                 <li>
-                    <Link to="/events">Events</Link>
+                  <Link to="/">
+                      <div className="navigation__header-icon"></div>
+                  </Link>
                 </li>
                 <li>
-                    <Link to="/">Home</Link>
+                    <Link to="/events" className="header-link">Events</Link>
                 </li>
                 <li>
-                    <Link to="/plex">Plex</Link>
+                    <Link to="/" className="header-link">Home</Link>
+                </li>
+                <li>
+                    <Link to="/plex" className="header-link">Plex</Link>
                 </li>
             </ul>
         </nav>
     );
 }
 
-function Header() {
-    return (
-        <Link to="/">
-            <div className="header__container"></div>
-        </Link>
-    );
+function Home() {
+  return (<div></div>)
 }
 
 function App() {
