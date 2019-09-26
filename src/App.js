@@ -1,24 +1,29 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
-function Events() {
-    return (
-        <div>
-            <h2>Events</h2>
-            <div className="event__list-container">
-                <div className="event__list-item">
-                    BBQ at the beach
-                </div>
-                <div className="event__list-item">
-                    Birthday Party!
-                </div>
-                <div className="event__list-item">
-                    Housewarming
+class Events extends Component {
+    constructor(props) {
+        super(...arguments);
+    }
+    render() {
+        return (
+            <div>
+                <h2>Events</h2>
+                <div className="event__list-container">
+                    <div className="event__list-item">
+                        BBQ at the beach
+                    </div>
+                    <div className="event__list-item">
+                        Birthday Party!
+                    </div>
+                    <div className="event__list-item">
+                        Housewarming
+                    </div>
                 </div>
             </div>
-        </div>
-    );
+        );
+    }
 }
 
 function Plex({ match }) {
@@ -49,27 +54,39 @@ function Plex({ match }) {
 //     );
 // }
 
-function Header() {
-    return (
-        <nav className="navigation__container">
-            <ul>
-                <li>
-                  <Link to="/">
-                      <div className="navigation__header-icon"></div>
-                  </Link>
-                </li>
-                <li>
-                    <Link to="/events" className="header-link">Events</Link>
-                </li>
-                <li>
-                    <Link to="/" className="header-link">Home</Link>
-                </li>
-                <li>
-                    <Link to="/plex" className="header-link">Plex</Link>
-                </li>
-            </ul>
-        </nav>
-    );
+class Header extends Component {
+    constructor(props) {
+        super(...arguments);
+
+        // this.state = {
+        //     instructors: [],
+        //     instructorID: match.params.instructorID
+        // };
+
+    }
+
+    render() {
+        return (
+            <nav className="navigation__container">
+                <ul>
+                    <li>
+                      <Link to="/">
+                          <div className="navigation__header-icon"></div>
+                      </Link>
+                    </li>
+                    <li>
+                        <Link to="/events" className="header-link">Events</Link>
+                    </li>
+                    <li>
+                        <Link to="/" className="header-link">Home</Link>
+                    </li>
+                    <li>
+                        <Link to="/plex" className="header-link">Plex</Link>
+                    </li>
+                </ul>
+            </nav>
+        );
+    }
 }
 
 function Home() {
@@ -84,21 +101,22 @@ function ContentContainer(props) {
     )
 }
 
-function App() {
-  return (
-      <Router>
-          <div>
-              <Header/>
-              <ContentContainer>
-                  <Switch>
-                    <Route exact path="/" component={Home} />
-                    <Route path="/events" component={Events} />
-                    <Route path="/plex" component={Plex} />
-                  </Switch>
-              </ContentContainer>
-          </div>
-      </Router>
-  );
+class App extends Component {
+    render() {
+        return (
+            <Router>
+                <Route path="/" component={Header} />
+                <ContentContainer>
+                    <Switch>
+                        <Route exact path="/" component={Home} />
+                        <Route path="/events" component={Events} />
+                        <Route path="/plex" component={Plex} />
+                    </Switch>
+                </ContentContainer>
+            </Router>
+        );
+
+    }
 }
 
 export default App;
