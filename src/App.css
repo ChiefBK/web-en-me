@@ -34,7 +34,7 @@
 
 .header-link {
   letter-spacing: 2px;
-  color: grey;
+  color: rgba(128, 128, 128, 0.4);
   text-decoration: none;
   cursor: pointer;
 }
@@ -50,15 +50,15 @@
 
 .navigation__container ul {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: space-around;
   padding-inline-start: 0;
   flex-wrap: wrap;
 }
 
 .navigation__container li {
   list-style-type: none;
-  flex-grow: 1;
+  width: 50px;
+  opacity: 10%;
 }
 
 .navigation__container li.home {
@@ -74,4 +74,8 @@
   background-repeat: no-repeat;
   background-position: center center;
   height: 30px;
+}
+
+.content__container {
+  padding: 20px 50px 10px 50px;
 }
